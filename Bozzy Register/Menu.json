@@ -1,6 +1,139 @@
-[{
-	"id": 1,
-	"name": "Irish Whiskey",
+[
+	{
+		"id": 0,
+		"name": "Beer",
+		"list": [
+			{
+				"id": 1,
+				"name": "Beer",
+				"price": 350
+			},
+			{
+				"id": 2,
+				"name": "St Peters",
+				"price": 420
+			},
+			{
+				"id": 3,
+				"name": "Omer",
+				"price": 200
+			},
+			{
+				"id": 4,
+				"name": "Williams",
+				"price": 380
+			},
+			{
+				"id": 5,
+				"name": "Oharas",
+				"price": 380
+			},
+			{
+				"id": 6,
+				"name": "Mongozo",
+				"price": 380
+			},
+			{
+				"id": 7,
+				"name": "Thetchers",
+				"price": 350
+			},
+			{
+				"id": 8,
+				"name": "Posh",
+				"price": 350
+			},
+			{
+				"id": 9,
+				"name": "Franz",
+				"price": 350
+			},
+			{
+				"id": 10,
+				"name": "Goose",
+				"price": 380
+			},
+			{
+				"id": 11,
+				"name": "Thornbridge",
+				"price": 350
+			},
+			{
+				"id": 12,
+				"name": "Belle view kriek",
+				"price": 350
+			},
+			{
+				"id": 13,
+				"name": "Belle view kriek",
+				"price": 450
+			},
+			{
+				"id": 14,
+				"name": "Will brue",
+				"price": 350
+			}
+		]
+	},
+	{
+		"id": 0,
+		"name": "Cocktails",
+		"list": [
+			{
+				"id": 1,
+				"name": "infusion",
+				"price": 250
+			},
+			{
+				"id": 2,
+				"name": "bett infusion",
+				"price": 300
+			},
+			{
+				"id": 3,
+				"name": "Infusion bottle",
+				"price": 1000
+			},
+			{
+				"id": 4,
+				"name": "Set of infusions",
+				"price": 1000
+			},
+			{
+				"id": 5,
+				"name": "Shot",
+				"price": 300
+			},
+			{
+				"id": 6,
+				"name": "Set of Shots",
+				"price": 600
+			},
+			{
+				"id": 7,
+				"name": "Cocktail",
+				"price": 500
+			},
+			{
+				"id": 8,
+				"name": "Cocktail",
+				"price": 550
+			},
+			{
+				"id": 9,
+				"name": "Cocktail",
+				"price": 600
+			},
+			{
+				"id": 10,
+				"name": "Cocktail",
+				"price": 700
+			}
+		]
+	},
+	{
+		"id": 1,
+		"name": "Irish Whiskey",
 		"list": [
 			{
 				"id": 1,
@@ -32,32 +165,498 @@
 	{
 		"id": 2,
 		"name": "Scotch Whiskey",
-			"list": [
-				{
-					"id": 1,
-					"name": "Bells",
-					"price": 300
-				},
-				{
-					"id": 2,
-					"name": "Red Label",
-					"price": 350
-				},
-				{
-					"id": 3,
-					"name": "Black Label",
-					"price": 450
-				},
-				{
-					"id": 4,
-					"name": "Monkey Sholder",
-					"price": 450
-				},
-				{
-					"id": 5,
-					"name": "Chivas Regal 12",
-					"price": 450
-				}
-			]
+		"list": [
+			{
+				"id": 1,
+				"name": "Bells",
+				"price": 300
+			},
+			{
+				"id": 2,
+				"name": "Red Label",
+				"price": 350
+			},
+			{
+				"id": 3,
+				"name": "Black Label",
+				"price": 450
+			},
+			{
+				"id": 4,
+				"name": "Monkey Sholder",
+				"price": 450
+			},
+			{
+				"id": 5,
+				"name": "Chivas Regal 12",
+				"price": 450
+			},
+			{
+				"id": 6,
+				"name": "Smokey Joe (islay)",
+				"price": 550
+			},
+			{
+				"id": 7,
+				"name": "Pit Chimney (57 proof)",
+				"price": 550
+			},
+			{
+				"id": 8,
+				"name": "Tamnavulin Sherry Cask",
+				"price": 400
+			},
+			{
+				"id": 9,
+				"name": "Jura Journey",
+				"price": 500
+			},
+			{
+				"id": 10,
+				"name": "Singleton 12 years",
+				"price": 550
+			},
+			{
+				"id": 11,
+				"name": "Glenfiddich 12 years",
+				"price": 550
+			},
+			{
+				"id": 12,
+				"name": "Glenfiddich 15 years",
+				"price": 600
+			},
+			{
+				"id": 13,
+				"name": "Glenfiddich 18 years",
+				"price": 700
+			},
+			{
+				"id": 14,
+				"name": "Ardberg 10 years",
+				"price": 700
+			}
+		]
+	},
+	{
+		"id": 3,
+		"name": "American Whiskey",
+		"list": [
+			{
+				"id": 1,
+				"name": "Benchmark",
+				"price": 300
+			},
+			{
+				"id": 2,
+				"name": "Jim Beam",
+				"price": 350
+			},
+			{
+				"id": 3,
+				"name": "Bulleit",
+				"price": 400
+			},
+			{
+				"id": 4,
+				"name": "Darby",
+				"price": 400
+			},
+			{
+				"id": 5,
+				"name": "Jack Daniels",
+				"price": 450
+			},
+			{
+				"id": 6,
+				"name": "Jack Daniels Single Barrel",
+				"price": 600
+			}
+		]
+	},
+	{
+		"id": 4,
+		"name": "Rum",
+		"list": [
+			{
+				"id": 1,
+				"name": "Sailor jerry",
+				"price": 300
+			},
+			{
+				"id": 2,
+				"name": "Contrabando 5 years",
+				"price": 350
+			},
+			{
+				"id": 3,
+				"name": "Cptn Morgan",
+				"price": 350
+			},
+			{
+				"id": 4,
+				"name": "Saint James",
+				"price": 350
+			},
+			{
+				"id": 5,
+				"name": "Plantation",
+				"price": 450
+			},
+			{
+				"id": 6,
+				"name": "Don PAPA",
+				"price": 500
+			},
+			{
+				"id": 7,
+				"name": "Reserva 22 years",
+				"price": 600
+			}
+		]
+	},
+	{
+		"id": 5,
+		"name": "Gin",
+		"list": [
+			{
+				"id": 1,
+				"name": "Grinolls",
+				"price": 300
+			},
+			{
+				"id": 2,
+				"name": "Gordons Pink",
+				"price": 300
+			},
+			{
+				"id": 3,
+				"name": "Barrister",
+				"price": 300
+			},
+			{
+				"id": 4,
+				"name": "Moon",
+				"price": 450
+			},
+			{
+				"id": 5,
+				"name": "Hickson",
+				"price": 450
+			},
+			{
+				"id": 6,
+				"name": "Haymands",
+				"price": 500
+			},
+			{
+				"id": 7,
+				"name": "Hendricks",
+				"price": 550
+			}
+		]
+	},
+	{
+		"id": 6,
+		"name": "Tequila",
+		"list": [
+			{
+				"id": 1,
+				"name": "La malinche",
+				"price": 300
+			},
+			{
+				"id": 2,
+				"name": "Mescal",
+				"price": 400
+			},
+			{
+				"id": 3,
+				"name": "Milagro",
+				"price": 400
+			}
+		]
+	},
+	{
+		"id": 7,
+		"name": "Brandy",
+		"list": [
+			{
+				"id": 1,
+				"name": "Ararat",
+				"price": 350
+			},
+			{
+				"id": 2,
+				"name": "Torres 10 years",
+				"price": 350
+			},
+			{
+				"id": 3,
+				"name": "Milenario",
+				"price": 350
+			},
+			{
+				"id": 4,
+				"name": "Favro",
+				"price": 400
+			},
+			{
+				"id": 5,
+				"name": "Kamu VS",
+				"price": 450
+			},
+			{
+				"id": 6,
+				"name": "Kamu VSOP",
+				"price": 600
+			}
+		]
+	},
+	{
+		"id": 8,
+		"name": "Heres/Porto",
+		"list": [
+			{
+				"id": 1,
+				"name": "Elegante",
+				"price": 350
+			},
+			{
+				"id": 2,
+				"name": "Kopke",
+				"price": 350
+			}
+		]
+	},
+	{
+		"id": 9,
+		"name": "Wine",
+		"list": [
+			{
+				"id": 1,
+				"name": "Alla Moda",
+				"price": 300
+			},
+			{
+				"id": 2,
+				"name": "Cool wine",
+				"price": 450
+			},
+			{
+				"id": 3,
+				"name": "Cava",
+				"price": 350
+			}
+		]
+	},
+	{
+		"id": 10,
+		"name": "Vermouth",
+		"list": [
+			{
+				"id": 1,
+				"name": "Vittore",
+				"price": 300
+			},
+			{
+				"id": 2,
+				"name": "Martini",
+				"price": 300
+			},
+			{
+				"id": 3,
+				"name": "Dolan Blanc",
+				"price": 350
+			}
+		]
+	},
+	{
+		"id": 11,
+		"name": "Destillate",
+		"list": [
+			{
+				"id": 1,
+				"name": "Kizil\Tut",
+				"price": 300
+			},
+			{
+				"id": 2,
+				"name": "Other Destillates",
+				"price": 350
+			}
+		]
+	},
+	{
+		"id": 12,
+		"name": "Vodka",
+		"list": [
+			{
+				"id": 1,
+				"name": "Husky",
+				"price": 250
+			},
+			{
+				"id": 2,
+				"name": "Absolute",
+				"price": 300
+			},
+			{
+				"id": 3,
+				"name": "beluga",
+				"price": 350
+			}
+		]
+	},
+	{
+		"id": 13,
+		"name": "Liqours",
+		"list": [
+			{
+				"id": 1,
+				"name": "Jager",
+				"price": 300
+			},
+			{
+				"id": 2,
+				"name": "Beherovka",
+				"price": 300
+			},
+			{
+				"id": 3,
+				"name": "Fruko Shultz",
+				"price": 300
+			},
+			{
+				"id": 4,
+				"name": "Marie Brizzard",
+				"price": 300
+			},
+			{
+				"id": 5,
+				"name": "Bayles",
+				"price": 300
+			},
+			{
+				"id": 6,
+				"name": "Ferne",
+				"price": 350
+			},
+			{
+				"id": 7,
+				"name": "Amaro",
+				"price": 350
+			},
+			{
+				"id": 8,
+				"name": "Shartrouse",
+				"price": 350
+			}
+		]
+	},
+	{
+		"id": 14,
+		"name": "Non Alco"
+		{
+			"id": 1,
+			"name": "Water",
+			"price": 150
+		},
+		{
+			"id": 2,
+			"name": "Juice",
+			"price": 150
+		},
+		{
+			"id": 3,
+			"name": "Cola\Borjomi",
+			"price": 200
 		}
+		{
+			"id": 4,
+			"name": "Lemonade",
+			"price": 300
+		}
+		]
+	},
+	{
+		"id": 15,
+		"name": "Coffee\Tea"
+		{
+			"id": 1,
+			"name": "Espresso",
+			"price": 200
+		},
+		{
+			"id": 2,
+			"name": "Americano",
+			"price": 200
+		},
+		{
+			"id": 3,
+			"name": "Capuch",
+			"price": 250
+		},
+		{
+			"id": 4,
+			"name": "Latte",
+			"price": 250
+		},
+		{
+			"id": 5,
+			"name": "Tea",
+			"price": 500
+		}
+		]
+	},
+	{
+		"id": 16,
+		"name": "Kitchen"
+		{
+			"id": 1,
+			"name": "Grissini",
+			"price": 150
+		},
+		{
+			"id": 2,
+			"name": "Nuts",
+			"price": 200
+		},
+		{
+			"id": 3,
+			"name": "Olives",
+			"price": 350
+		},
+		{
+			"id": 4,
+			"name": "Meat",
+			"price": 300
+		},
+		{
+			"id": 5,
+			"name": "Basturma",
+			"price": 350
+		},
+		{
+			"id": 6,
+			"name": "Pita",
+			"price": 350
+		},
+		{
+			"id": 7,
+			"name": "Beer cheese plate",
+			"price": 500
+		},
+		{
+			"id": 8,
+			"name": "Wine cheese plate",
+			"price": 700
+		},
+		{
+			"id": 9,
+			"name": "Greek plate",
+			"price": 700
+		}
+		]
+	}
 ]
