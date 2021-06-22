@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
 	@State var order: [drink:Int] = [:]
-	var TotalPrice: ([drink:Int])->Int = { menu in
+	@State var discount = ""
+	var TotalPrice: ([drink:Int], Int)->Int = { menu, discount in
 		var total = 0
 		for item in menu {
 			total = total + (item.key.price * item.value)
 		}
-		return total
+		return (total - (total / 100 * discount))
 	}
 	var body: some View {
 		NavigationView {
@@ -25,18 +26,70 @@ struct ContentView: View {
 				}
 				
 				//меню
-				let midpoint = menu.count / 2
+				let midpoint = menu.count / 3
 				let firstHalf = menu[..<midpoint]
-				let secondHalf = menu[midpoint...]
+				let secondHalf = menu[midpoint..<(midpoint*2)]
+				let thirdHalf = menu[(midpoint*2)...]
+				ScrollView{
 				HStack{
 					MenuList(Half: firstHalf, order: $order)
 					MenuList(Half: secondHalf, order: $order)
-					Text("Custom")
+					MenuList(Half: thirdHalf, order: $order)
+					//Text("Custom")
 				}
-				
+				}
+				HStack{
+					TextField("%", text: $discount)
+						.keyboardType(.numberPad)
+						.padding()
+					Image(systemName: "keyboard.chevron.compact.down")
+						.resizable()
+						.frame(width: 30, height: 30)
+						.padding()
+						.onTapGesture{
+							hideKeyboard()
+						}
+					NavigationLink(destination:
+					CustomDrink(order: $order)
+					) {
+						VStack{
+							Text("Custom")
+								.foregroundColor(.primary)
+								.padding()
+						}
+						.border(Color.gray, width: 1.0)
+					}
+					Button {
+						order.removeAll()
+						discount = ""
+					} label: {
+						Text("Reset")
+					}
+				}
 			}
-			.navigationBarTitle(String(TotalPrice(order)))
+			.navigationBarTitle(String(TotalPrice(order, Int(discount) ?? 0)))
 			.navigationBarTitleDisplayMode(.inline)
+		}
+	}
+}
+
+struct CustomDrink: View {
+	@Binding var order: [drink:Int]
+	@State var Name = ""
+	@State var Price = ""
+	
+	var body: some View
+	{
+		VStack{
+			TextField("Name", text: $Name)
+			TextField("Price", text: $Price)
+				.keyboardType(.numberPad)
+			Button {
+				let Drink: drink = drink(id: 200, name: Name, price: Int(Price) ?? 1)
+				order[Drink] = 1
+			} label: {
+				Text("Reset")
+			}
 		}
 	}
 }
@@ -47,14 +100,27 @@ struct ListOfItems: View {
 	var items: [drink]
 	@Binding var order: [drink:Int]
 	var body: some View {
-		VStack{
-			ForEach(items, id: \.self) { item in
+		HStack{
+			let midpoint = items.count / 2
+			let firstHalf = items[..<midpoint]
+			let secondHalf = items[midpoint...]
+			VStack{
+			ForEach(firstHalf, id: \.self) { item in
 				Button {
 					order[item] = 1 //append(item)
 				} label: {
 					ItemBlock(item: item)
 				}
-				
+			}
+			}
+			VStack{
+			ForEach(secondHalf, id: \.self) { item in
+				Button {
+					order[item] = 1 //append(item)
+				} label: {
+					ItemBlock(item: item)
+				}
+			}
 			}
 		}
 	}
@@ -140,6 +206,13 @@ struct MenuList: View {
 		}
 	}
 }
+
+extension View {
+	func hideKeyboard() {
+		UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+	}
+}
+
 
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
