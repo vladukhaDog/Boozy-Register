@@ -19,56 +19,72 @@ struct ContentView: View {
 	}
 	var body: some View {
 		NavigationView {
-			VStack {
-				//список предметов в заказе
-				ScrollView{
-					OrderList(items: Array(order.keys), order: $order)
-				}
-				
-				//меню
-				let midpoint = menu.count / 3
-				let firstHalf = menu[..<midpoint]
-				let secondHalf = menu[midpoint..<(midpoint*2)]
-				let thirdHalf = menu[(midpoint*2)...]
-				ScrollView{
-				HStack{
-					MenuList(Half: firstHalf, order: $order)
-					MenuList(Half: secondHalf, order: $order)
-					MenuList(Half: thirdHalf, order: $order)
-					//Text("Custom")
-				}
-				}
-				HStack{
-					TextField("%", text: $discount)
-						.keyboardType(.numberPad)
-						.padding()
-					Image(systemName: "keyboard.chevron.compact.down")
-						.resizable()
-						.frame(width: 30, height: 30)
-						.padding()
-						.onTapGesture{
-							hideKeyboard()
+			ZStack{
+				BackgroundView()
+				VStack {
+					//список предметов в заказе
+					ScrollView{
+						OrderList(items: Array(order.keys), order: $order)
+					}
+					Divider()
+						.padding(.leading)
+						.padding(.trailing)
+					//меню
+					let midpoint = menu.count / 3
+					let firstHalf = menu[..<midpoint]
+					let secondHalf = menu[midpoint..<(midpoint*2)]
+					let thirdHalf = menu[(midpoint*2)...]
+					ScrollView{
+						HStack{
+							MenuList(Half: firstHalf, order: $order)
+							MenuList(Half: secondHalf, order: $order)
+							MenuList(Half: thirdHalf, order: $order)
+							//Text("Custom")
 						}
-					NavigationLink(destination:
-					CustomDrink(order: $order)
-					) {
+					}
+					Divider()
+						.padding(.leading)
+						.padding(.trailing)
+					HStack{
 						VStack{
-							Text("Custom")
-								.foregroundColor(.primary)
-								.padding()
+						TextField("%", text: $discount)
+							.keyboardType(.numberPad)
+							.padding(5)
 						}
-						.border(Color.gray, width: 1.0)
-					}
-					Button {
-						order.removeAll()
-						discount = ""
-					} label: {
-						Text("Reset")
+						.overlay(
+									RoundedRectangle(cornerRadius: 10)
+										.stroke(Color.purple, lineWidth: 3)
+								)
+						Image(systemName: "keyboard.chevron.compact.down")
+							.resizable()
+							.frame(width: 30, height: 30)
+							.padding()
+							.onTapGesture{
+								hideKeyboard()
+							}
+						NavigationLink(destination:
+										CustomDrink(order: $order)
+						) {
+							VStack{
+								Text("Custom")
+									.foregroundColor(.primary)
+									.padding()
+							}
+							.border(Color.gray, width: 1.0)
+						}
+						Button {
+							order.removeAll()
+							discount = ""
+						} label: {
+							Text("Reset")
+								.foregroundColor(.primary)
+						}
+						.padding(.trailing, 3)
 					}
 				}
+				.navigationBarTitle(String(TotalPrice(order, Int(discount) ?? 0)))
+				.navigationBarTitleDisplayMode(.inline)
 			}
-			.navigationBarTitle(String(TotalPrice(order, Int(discount) ?? 0)))
-			.navigationBarTitleDisplayMode(.inline)
 		}
 	}
 }
@@ -88,7 +104,8 @@ struct CustomDrink: View {
 				let Drink: drink = drink(id: 200, name: Name, price: Int(Price) ?? 1)
 				order[Drink] = 1
 			} label: {
-				Text("Reset")
+				Text("add")
+					.foregroundColor(.primary)
 			}
 		}
 	}
@@ -105,22 +122,22 @@ struct ListOfItems: View {
 			let firstHalf = items[..<midpoint]
 			let secondHalf = items[midpoint...]
 			VStack{
-			ForEach(firstHalf, id: \.self) { item in
-				Button {
-					order[item] = 1 //append(item)
-				} label: {
-					ItemBlock(item: item)
+				ForEach(firstHalf, id: \.self) { item in
+					Button {
+						order[item] = 1 //append(item)
+					} label: {
+						ItemBlock(item: item)
+					}
 				}
-			}
 			}
 			VStack{
-			ForEach(secondHalf, id: \.self) { item in
-				Button {
-					order[item] = 1 //append(item)
-				} label: {
-					ItemBlock(item: item)
+				ForEach(secondHalf, id: \.self) { item in
+					Button {
+						order[item] = 1 //append(item)
+					} label: {
+						ItemBlock(item: item)
+					}
 				}
-			}
 			}
 		}
 	}
@@ -157,7 +174,7 @@ struct OrderList: View {
 					Text(String(order[item]!))
 					
 					Button {
-							order[item] = order[item]! + 1
+						order[item] = order[item]! + 1
 					} label: {
 						Image(systemName: "plus.circle")
 							.resizable()
@@ -178,6 +195,7 @@ struct ItemBlock: View {
 				Text(String(item.price))
 			}
 			.padding()
+			.foregroundColor(.primary)
 		}
 		.cornerRadius(10.0)
 		.border(Color.gray, width: 1.0)
@@ -199,6 +217,7 @@ struct MenuList: View {
 						Text(category.name)
 							.foregroundColor(.primary)
 							.padding()
+						
 					}
 					.border(Color.gray, width: 1.0)
 				}
